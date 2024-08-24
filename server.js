@@ -9,6 +9,9 @@ const app = express()
 
 app.use(express.json());
 app.use(cors());
+app.use(cors({
+  origin: 'https://merry-rugelach-d4ac5f.netlify.app'
+}));
 
 app.listen(process.env.PORT, async () =>{
    try {

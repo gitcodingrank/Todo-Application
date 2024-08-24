@@ -25,7 +25,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost:9000/users/register', { name, email, password, mobile });
+      await axios.post('https://todo-application-vzy2.onrender.com/users/register', { name, email, password, mobile });
       toast({
         title: 'Registration Successful',
         description: 'You have been registered successfully. Please log in.',

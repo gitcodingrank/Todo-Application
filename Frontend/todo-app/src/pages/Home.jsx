@@ -66,7 +66,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:9000/todos/byUser', {
+      const response = await axios.post('https://todo-application-vzy2.onrender.com/todos/byUser', {
         userId
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -115,7 +115,7 @@ const Home = () => {
     }
 
     try {
-      await axios.post('http://localhost:9000/todos/create', { task: newTask, priority, userId }, {
+      await axios.post('https://todo-application-vzy2.onrender.com/todos/create', { task: newTask, priority, userId }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setNewTask('');
@@ -146,7 +146,7 @@ const Home = () => {
     if (!editTodoId) return;
 
     try {
-      await axios.put(`http://localhost:9000/todos/${editTodoId}`, {
+      await axios.put(`https://todo-application-vzy2.onrender.com/todos/${editTodoId}`, {
         task: editTask,
         priority: editPriority
       }, {
@@ -190,7 +190,7 @@ const Home = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:9000/todos/${id}/toggleStatus`, {}, {
+      await axios.patch(`https://todo-application-vzy2.onrender.com/todos/${id}/toggleStatus`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       fetchTodos();
@@ -227,7 +227,7 @@ const Home = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:9000/todos/${id}`, {
+      await axios.delete(`https://todo-application-vzy2.onrender.com/todos/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       fetchTodos();
@@ -253,7 +253,7 @@ const Home = () => {
   const fetchTodoForEdit = async (id) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get(`http://localhost:9000/todos/${id}`, {
+      const response = await axios.get(`https://todo-application-vzy2.onrender.com/todos/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const todo = response.data;
